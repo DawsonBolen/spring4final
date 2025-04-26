@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Document</title>
+
+</head>
+<body>
+
+    <h1>Spiders</h1>
+
+    <ul>
+        <li th:each="spider : ${spiders}">
+            <strong th:text="${spider.spiderName}"></strong>
+            <span th:text="${spider.price}"></span>
+        </li>
+    </ul>
+    
+</body>
+</html>
