@@ -1,7 +1,8 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Spider;
-import com.example.demo.repository.SpiderRepository;
+
+import com.example.demo.model.Customer;
+import com.example.demo.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,18 +12,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @Controller
-public class SpiderController {
+public class CustomerController {
+     @Autowired
+    private CustomerRepository customerRepository;
 
-    @Autowired
-    private SpiderRepository spiderRepository;
 
-    @GetMapping("/spiders")
-    public String getAllSpiders(Model model) {
-        List<Spider> spiders = spiderRepository.findAll();
-        model.addAttribute("spiders", spiders);
-        return "spiders";
-    }
+   
+    
+    
+
 
 }

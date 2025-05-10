@@ -1,34 +1,32 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.GenerationType;
-
-
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "spiders")
 public class Spider {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer spiderId;
-    private String spiderName; 
+
+    private String spiderName;
+
     private double price;
+
     private String description;
 
-
-    //getters and setters
+    // getters and setters
 
     public Integer getSpiderId() {
         return spiderId;
     }
 
-    public void setSpiderId(Integer spiderId){
+    public void setSpiderId(Integer spiderId) {
         this.spiderId = spiderId;
     }
 
-    public String getSpiderName(){
+    public String getSpiderName() {
         return spiderName;
     }
 
