@@ -8,28 +8,31 @@ import java.util.List;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer orderId;
-
+    private Long orderId;
 
     @ManyToOne
     @JoinColumn(name = "customerId")
     private Customer customer;
-    
+
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItems> items;
 
-    public Integer getOrderId() {
+    public Long getOrderId() {
         return orderId;
     }
-    public void setOrderId(Integer orderId) {
+
+    public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
-    public Customer getCustomer(){
+
+    public Customer getCustomer() {
         return customer;
     }
+
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
     public List<OrderItems> getItems() {
         return items;
     }
@@ -37,8 +40,5 @@ public class Order {
     public void setItems(List<OrderItems> items) {
         this.items = items;
     }
-
-
-
 
 }

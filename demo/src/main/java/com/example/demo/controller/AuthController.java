@@ -25,6 +25,11 @@ public class AuthController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login"; // returns login.html
+    }
+
     @GetMapping("/register")
     public String showRegisterForm(Model model) {
         model.addAttribute("customer", new Customer());

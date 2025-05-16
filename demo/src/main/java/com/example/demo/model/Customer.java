@@ -35,12 +35,12 @@ public class Customer {
     }
 
     // Getters and Setters
-    public Long getId() {
+    public Long getCustomerId() {
         return customerId;
     }
 
-    public void setId(Long id) {
-        this.customerId = id;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
 
     public String getFirstName() {

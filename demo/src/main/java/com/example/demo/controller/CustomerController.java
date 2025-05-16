@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-
 import com.example.demo.model.Customer;
 import com.example.demo.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
 @Controller
 public class CustomerController {
-     @Autowired
+    @Autowired
     private CustomerRepository customerRepository;
-
-
-   
-    
-    
-
 
 }

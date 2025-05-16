@@ -8,7 +8,7 @@ public class Spider {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer spiderId;
+    private Long spiderId;
 
     private String spiderName;
 
@@ -18,11 +18,11 @@ public class Spider {
 
     // getters and setters
 
-    public Integer getSpiderId() {
+    public Long getSpiderId() {
         return spiderId;
     }
 
-    public void setSpiderId(Integer spiderId) {
+    public void setSpiderId(Long spiderId) {
         this.spiderId = spiderId;
     }
 

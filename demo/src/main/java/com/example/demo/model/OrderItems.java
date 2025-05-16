@@ -34,12 +34,12 @@ public class OrderItems {
     }
 
     // Getters and Setters
-    public Long getId() {
+    public Long getOrderItemsId() {
         return orderItemsId;
     }
 
-    public void setId(Long id) {
-        this.orderItemsId = id;
+    public void setOrderItemsId(Long orderItemsId) {
+        this.orderItemsId = orderItemsId;
     }
 
     public Order getOrder() {
