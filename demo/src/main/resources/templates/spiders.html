@@ -27,29 +27,17 @@
 
     <header>
         <h1>I Love Webs</h1>
+
+        <div th:if="${#authorization.expression('hasRole(''ADMIN'')')}" id="post-spider">
+            <a th:href="@{/spiders/postspider}" class="btn btn-primary">Post a new spider</a>
+        </div>
     </header>
 
 
 
 
 
-    <h2>Add a New Spider</h2>
-    <form th:if="${#authorization.expression('hasRole(''ADMIN'')')}" id="post-spider" th:action="@{/spiders/create}"
-        method="post">
-        <div>
-            <label for="spiderName">Name:</label>
-            <input type="text" id="spiderName" name="spiderName" required />
-        </div>
-        <div>
-            <label for="price">Price</label>
-            <input type="number" step="0.01" id="price" name="price" required />
-        </div>
-        <div>
-            <label for="description">Description</label>
-            <textarea id="description" name="description" rows="4" cols="30" required></textarea>
-        </div>
-        <button type="submit">Add Spider</button>
-    </form>
+
 
 
     <div class="container-fluid">

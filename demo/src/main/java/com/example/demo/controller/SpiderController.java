@@ -29,13 +29,19 @@ public class SpiderController {
         return "spiders";
     }
 
-    @PostMapping("/create") 
+    @GetMapping("/postspider")
+    public String showPostSpiderForm(Model model) {
+        model.addAttribute("spider", new Spider());
+        return "postspider";
+    }
+
+    @PostMapping("/create")
     public String addSpider(@ModelAttribute Spider spider) {
         spiderRepository.save(spider);
         return "redirect:/spiders";
     }
 
-    @DeleteMapping("/delete/{id}") 
+    @DeleteMapping("/delete/{id}")
     public String deleteSpider(@PathVariable Long id) {
         spiderRepository.deleteById(id);
         return "redirect:/spiders";

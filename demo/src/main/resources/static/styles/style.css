@@ -17,6 +17,16 @@ body {
     width: 100%;
 }
 
+header {
+    background-color: #293241;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    color: white;
+    margin-bottom: 20px;
+}
+
 .custom-column {}
 
 .custom-card {
