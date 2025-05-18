@@ -14,7 +14,7 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String email;
-    private String password; // optional for now, if login is needed
+    private String password;
     private String role;
 
     private String address;

@@ -26,12 +26,15 @@ public class SecurityConfig {
         return http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/register", "/login", "/css/**").permitAll()
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/spiders/delete/**").hasRole("ADMIN")
+                        .requestMatchers("/spiders/create").hasRole("ADMIN")
+                        .requestMatchers("/spiders").authenticated()
                         .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")
                         .defaultSuccessUrl("/spiders", true)
                         .permitAll())
+
                 .logout(logout -> logout.permitAll())
                 .build();
     }

@@ -39,7 +39,7 @@ public class AuthController {
     @PostMapping("/register")
     public String registerCustomer(@ModelAttribute Customer customer) {
         customer.setPassword(passwordEncoder.encode(customer.getPassword()));
-        customer.setRole("ROLE_CUSTOMER"); // ✅ Set default role here
+        customer.setRole("ROLE_USER"); // ✅ Set default role here
         customerRepository.save(customer);
         return "redirect:/login";
     }

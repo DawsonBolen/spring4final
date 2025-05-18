@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SpiderRepository extends JpaRepository<Spider, Integer>{
+public interface SpiderRepository extends JpaRepository<Spider, Long> {
 
 }

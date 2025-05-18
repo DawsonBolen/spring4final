@@ -1,0 +1,44 @@
+html,
+body {
+    margin: 0;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    background-color: #efefef;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.login-form {
+    max-width: 700px;
+    width: 100%;
+}
+
+.custom-column {}
+
+.custom-card {
+    width: 100%;
+}
+
+#post-spider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn-delete {
+    background-color: crimson;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background-color: darkred;
+}

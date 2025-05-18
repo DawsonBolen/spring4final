@@ -17,6 +17,7 @@ public class CustomerDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        // added this change
         return List.of(new SimpleGrantedAuthority(customer.getRole()));
     }
 
@@ -27,7 +28,7 @@ public class CustomerDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return customer.getEmail(); // or customer.getUsername() if you have that
+        return customer.getEmail();
     }
 
     @Override
