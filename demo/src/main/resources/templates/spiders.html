@@ -55,13 +55,19 @@
                         <a th:if="${#authorization.expression('hasRole(''USER'')')}" href="#"
                             class="btn btn-primary">Add To Cart</a>
 
+                        <div class="d-flex align-items-center" style="gap: 5px;"
+                            th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                            <form form th:action="@{/spiders/delete/{id}(id=${spider.spiderId})}" method="post"
+                                style="display:inline;">
+                                <input type="hidden" name="_method" value="delete" />
+                                <button type="submit" class="btn-delete">🗑️ Delete</button>
+                            </form>
 
-                        <form th:if="${#authorization.expression('hasRole(''ADMIN'')')}" form
-                            th:action="@{/spiders/delete/{id}(id=${spider.spiderId})}" method="post"
-                            style="display:inline;">
-                            <input type="hidden" name="_method" value="delete" />
-                            <button type="submit" class="btn-delete">🗑️ Delete</button>
-                        </form>
+                            <a th:href="@{/spiders/editspider/{id}(id=${spider.spiderId})}"
+                                class="btn btn-secondary">Edit</a>
+                        </div>
+
+
 
                     </div>
                 </div>
