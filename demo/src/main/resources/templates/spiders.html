@@ -31,6 +31,15 @@
         <div th:if="${#authorization.expression('hasRole(''ADMIN'')')}" id="post-spider">
             <a th:href="@{/spiders/postspider}" class="btn btn-primary">Post a new spider</a>
         </div>
+
+        <a style="text-decoration: none;" th:if="${#authorization.expression('hasRole(''USER'')')}"
+            th:href="@{/shoppingcart/{id}(id=${customerId})}" class="cart-btn">
+            <div class="cart-btn-cont">
+                🛒
+                <span id="cart-text" th:text="${itemCount}"></span>
+            </div>
+        </a>
+
     </header>
 
     <div class="container-fluid">
@@ -45,8 +54,18 @@
                         <h6 th:text="${spider.price}"></h6>
                         <p th:text="${spider.description}" class="card-text"></p>
 
-                        <a th:if="${#authorization.expression('hasRole(''USER'')')}" href="#"
-                            class="btn btn-primary">Add To Cart</a>
+                        <form th:if="${#authorization.expression('hasRole(''USER'')')}"
+                            th:action="@{/shoppingcart/addItem/{id}(id=${customerId})}" method="post">
+
+                            <input type="hidden" name="spiderId" th:value="${spider.spiderId}" />
+                            <input type="number" name="quantity" value="1" min="1" class="form-control mb-2" />
+
+                            <button type="submit" class="btn btn-primary">Add To Cart</button>
+                        </form>
+
+
+
+
 
                         <div class="d-flex align-items-center" style="gap: 5px;"
                             th:if="${#authorization.expression('hasRole(''ADMIN'')')}">

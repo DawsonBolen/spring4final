@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Your Cart</h1>
+    </header>
+
+    <div id="shopping-cart-main">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Spider</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${items}">
+                    <td th:text="${item.spider.spiderName}">Spider Name</td>
+                    <td th:text="${item.quantity}">1</td>
+                    <td th:text="${item.priceAtAddTime}">$0.00</td>
+
+                    <td>
+                        <form th:action="@{/shoppingcart/removeItem/{id}(id=${item.id})}" method="post"
+                            style="display:inline;">
+                            <input type="hidden" name="_method" value="delete" />
+                            <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                        </form>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+
+        <p><strong>Total Items:</strong> <span th:text="${items.size()}">0</span></p>
+
+    </div>
+
+    <div>
+
+    </div>
+
+
+
+</body>
+
+</html>

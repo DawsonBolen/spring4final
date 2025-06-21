@@ -52,3 +52,54 @@ header {
 .btn-delete:hover {
     background-color: darkred;
 }
+
+
+.cart-btn-cont {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    text-decoration: none;
+    font-size: 30px;
+    background-color: #ffd166;
+    text-align: center;
+    position: relative;
+}
+
+#cart-text {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    color: white;
+    z-index: 5;
+    font-size: 18px;
+}
+
+
+
+#shopping-cart-main {
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+th,
+td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
